@@ -1,30 +1,43 @@
-let getPics=document.querySelector(".button-area");
-let display=document.querySelector(".display-area");
+// selcetors
 
-getPics.addEventListener("click",function(){
-    
-    fetch("https://aws.random.cat/meow")
-.then(function(apidata){
-return apidata.json()
+let check = document.querySelector(".btn-check-match");
+let info = document.querySelector(".info");
+let input = document.querySelector(".user-input");
+let showCats = document.querySelector(".btn-show-cats");
 
-}).then(function(data){
+let showImage = document.querySelector(".show-image");
+//event listeners
+check.addEventListener("click", checkMatch);
+showCats.addEventListener("click", showCatsData);
 
+//functions
 
-    display.innerHTML=`
-    
-    
-    <img src="${data.file}"/>`
+function showCatsData() {
+  fetch("https://aws.random.cat/meow")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data.file);
+      showImage.innerHTML = `<img src="${data.file}"></img>`;
+    });
+}
 
+function checkMatch() {
+  //   console.log("checked");
 
+  var r1 = Math.floor(Math.random() * 10 + 1);
+  var r2 = Math.floor(Math.random() * 10 + 1);
 
-    // let htm=`
-    // <img src="${data.file}"/>
-    // `
-    // display.insertAdjacentHTML("afterbegin",htm);
-})
-    
-    
+  if (r1 == r2) {
+    // console.log("prefetct match");
+    info.textContent = `not perfect match for ${input.value} `;
+    // input.value = "";
+  } else {
+    // console.log("not");
+    info.textContent = ` a prefect match for  ${input.value}`;
+    // input.value = "";
+  }
+}
 
-    
-})
-
+//integrating random cat api

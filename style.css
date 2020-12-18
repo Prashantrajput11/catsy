@@ -1,56 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Langar&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Langar", cursive;
+}
+
+:root {
+  --primary-color: #bc4e9c;
+  --primary-color-two: #f80759;
+}
+.center-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.top-header {
+  /* border: 1px solid red; */
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-color-two)
+  );
+  height: 100px;
+}
+
+.cw-aic {
   color: white;
   text-align: center;
 }
-:root {
-  --primary-color: #2980b9;
-}
 
-.header-data {
-  background: var(--primary-color);
-  height: 80px;
+.cats-container {
+  /* border: 1px solid red; */
+  display: block;
+  height: 300px;
+  box-shadow: 0px 4px 3px #aaa;
+  position: relative;
+}
+.show-image {
+  /* border: 1px solid red; */
+  height: 60%;
+  width: 80%;
+  margin: auto;
+}
+.show-image img {
   width: 100%;
-}
-
-.footer {
-  background: var(--primary-color);
-  height: 80px;
-  margin-bottom: 0;
-}
-
-/* .footer p{
-    
-} */
-.display-area {
-  background: white;
-  box-shadow: 2px 2px 4px #aaa;
-  height: 350px;
-  width: 350px;
-  color: black;
-  margin: 45px auto;
-  /* background:green; */
-
-  /* border:1px solid red; */
-}
-.button-area {
-  background: var(--primary-color);
-  color: black;
-  padding: 10px 15px;
-  margin-top: 50px;
-  border-radius: 5px;
-  width: 25%;
-  margin: 50px auto 20px auto;
-  box-shadow: 2px 2px var(--primary-color);
-}
-.button-area a {
-  color: white;
-  text-decoration: none;
-}
-.display-area img {
-  object-fit: cover;
+  /* object-fit: contain; */
   height: 100%;
-  width: 100%;
+  object-fit: contain;
+}
+
+.btn {
+  background: linear-gradient(var(--primary-color), var(--primary-color-two));
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+}
+
+.btn-show-cats {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+}
+
+.match-checker-content {
+  /* border: 1px solid red; */
+  height: 200px;
+  margin-top: 1rem;
+  box-shadow: 0px 4px 3px #aaa;
+  position: relative;
+}
+
+.btn-check-match {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  outline: none;
+  transition: transform;
+}
+
+.btn-check-match:hover {
+  transform: scale(1.1);
+}
+.info {
+  text-align: center;
+}
+.user-input {
+  margin: auto;
+  display: block;
+  border: 1px solid red;
+  height: 50px;
+  border-radius: 0.4rem;
 }
